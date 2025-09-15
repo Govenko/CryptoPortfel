@@ -137,13 +137,12 @@ async function updatePortfolio() {
   }
 }
 
-// Форматирование чисел
+// Универсальная функция для форматирования чисел
 function formatNumber(num) {
-  // Если число очень маленькое, но не ноль — всё равно округляем
-  const rounded = Math.round(num);
-  
-  // Возвращаем целое число с разделением тысяч (например, 1,234)
-  return rounded.toLocaleString();
+  if (Math.abs(num) < 0.01 && num !== 0) {
+    return num.toExponential(4);
+  }
+  return num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 });
 }
 
 // Обновляем каждые 60 сек
