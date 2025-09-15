@@ -106,18 +106,27 @@ async function updatePortfolio() {
       totalInvested += invested;
       totalCurrent += current;
 
-      const row = document.createElement("tr");
+     const row = document.createElement("tr");
 
-      row.innerHTML = `
-        <td>${coin.name} (${coin.symbol})</td>
-        <td>${formatNumber(coin.amount)}</td>
-        <td>$${formatNumber(coin.buyPrice)}</td>
-        <td>$${formatNumber(invested)}</td>
-        <td>$${formatNumber(currentPrice)}</td>
-        <td>$${formatNumber(current)}</td>
-        <td class="${diff >= 0 ? 'positive' : 'negative'}">$${formatNumber(diff)}</td>
-        <td class="${diff >= 0 ? 'positive' : 'negative'}">${formatNumber(percent)}%</td>
-      `;
+// Форматируем каждое поле по-своему
+const formattedAmount = Math.round(coin.amount).toLocaleString();           // Целое
+const formattedBuyPrice = coin.buyPrice.toFixed(2);                         // 2 знака
+const formattedInvested = Math.round(invested).toLocaleString();            // Целое
+const formattedCurrentPrice = currentPrice.toFixed(2);                      // 2 знака
+const formattedCurrentValue = Math.round(current).toLocaleString();         // Целое
+const formattedDiff = Math.round(diff).toLocaleString();                    // Целое
+const formattedPercent = Math.round(percent) + '%';                         // Целый %
+
+row.innerHTML = `
+  <td>${coin.name} (${coin.symbol})</td>
+  <td>${formattedAmount}</td>
+  <td>$${formattedBuyPrice}</td>
+  <td>$${formattedInvested}</td>
+  <td>$${formattedCurrentPrice}</td>
+  <td>$${formattedCurrentValue}</td>
+  <td class="${diff >= 0 ? 'positive' : 'negative'}">$${formattedDiff}</td>
+  <td class="${diff >= 0 ? 'positive' : 'negative'}">${formattedPercent}</td>
+`;
 
       tbody.appendChild(row);
     });
