@@ -139,7 +139,11 @@ async function updatePortfolio() {
 
 // Форматирование чисел
 function formatNumber(num) {
-  return Math.round(num).toLocaleString();
+  // Если число очень маленькое, но не ноль — всё равно округляем
+  const rounded = Math.round(num);
+  
+  // Возвращаем целое число с разделением тысяч (например, 1,234)
+  return rounded.toLocaleString();
 }
 
 // Обновляем каждые 60 сек
