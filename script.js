@@ -40,7 +40,7 @@ const portfolio = [
 // === Маппинг названий монет к ID CoinGecko ===
 // Важно: нужно знать ID каждой монеты в CoinGecko API
 const coinGeckoIds = {
-  "Chia": "chia",
+  "Chia": "XCH",
   "Arbitrum": "arbitrum",
   "Optimism": "optimism",
   "Polkadot": "polkadot",
