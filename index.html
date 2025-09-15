@@ -3,136 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Криптопортфель</title>
-  <meta name="theme-color" content="#2b5797" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f6f9;
-      color: #2b2b2b;
-      margin: 0;
-      padding: 10px;
-      font-size: 14px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 10px 0;
-    }
-    th, td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    th {
-      background-color: #2b5797;
-      color: white;
-    }
-    tr:hover { background-color: #f1f1f1; }
-    .profit { color: green; }
-    .loss { color: red; }
-    .total {
-      font-weight: bold;
-      text-align: right;
-      padding: 10px;
-    }
-    .loader { text-align: center; color: #666; }
-  </style>
+  <title>Мой криптопортфель</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="assets/icon-192.png" />
 </head>
 <body>
+  <div class="container">
+    <h1>Мой криптопортфель</h1>
+    <button id="refresh">🔄 Обновить цены</button>
+    <p><small>Данные обновлены: <span id="last-update">никогда</span></small></p>
 
-<h3>Мой криптопортфель</h3>
+    <table id="portfolio-table">
+      <thead>
+        <tr>
+          <th>Монета</th>
+          <th>Цена покупки ($)</th>
+          <th>Количество</th>
+          <th>Вложено ($)</th>
+          <th>Текущая цена ($)</th>
+          <th>Сейчас стоит ($)</th>
+          <th>Разница ($)</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Данные будут загружены из script.js -->
+      </tbody>
+    </table>
 
-<table id="portfolio">
-  <thead>
-    <tr>
-      <th>Монета</th>
-      <th>Цена покупки ($)</th>
-      <th>Количество</th>
-      <th>Вложено ($)</th>
-      <th>Текущая цена ($)</th>
-      <th>Сейчас стоит ($)</th>
-      <th>Разница ($)</th>
-    </tr>
-  </thead>
-  <tbody id="portfolio-body">
-    <!-- Данные будут загружены здесь -->
-  </tbody>
-  <tfoot>
-    <tr><td colspan="7" class="total">Общая прибыль: <span id="total-profit">...</span></td></tr>
-  </tfoot>
-</table>
+    <div class="total">
+      <strong>Общая прибыль: <span id="total-profit">$0.00</span></strong>
+    </div>
+  </div>
 
-<div class="loader" id="loader">Загрузка цен...</div>
-
-<script>
-  // === ВАШ ПОРТФЕЛЬ (редактируйте здесь) ===
-  const portfolio = [
-    { id: "bitcoin", symbol: "BTC", name: "Bitcoin", buyPrice: 43000, amount: 0.1 },
-    { id: "ethereum", symbol: "ETH", name: "Ethereum", buyPrice: 2800, amount: 0.8 },
-    { id: "cardano", symbol: "ADA", name: "Cardano", buyPrice: 0.35, amount: 500 },
-    // Добавьте свои монеты по такому шаблону
-  ];
-
-  // === Получение текущих цен с CoinGecko API ===
-  async function updatePrices() {
-    const ids = portfolio.map(p => p.id).join(",");
-    try {
-      const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`);
-      const data = await response.json();
-
-      let totalInvested = 0;
-      let totalCurrent = 0;
-
-      const tbody = document.getElementById("portfolio-body");
-      tbody.innerHTML = "";
-
-      portfolio.forEach(coin => {
-        const currentPrice = data[coin.id]?.usd || 0;
-        const invested = coin.buyPrice * coin.amount;
-        const currentWorth = currentPrice * coin.amount;
-        const difference = currentWorth - invested;
-
-        totalInvested += invested;
-        totalCurrent += currentWorth;
-
-        const diffClass = difference >= 0 ? "profit" : "loss";
-        const diffSign = difference >= 0 ? "+" : "";
-
-        const row = `
-          <tr>
-            <td>${coin.name}</td>
-            <td>$${coin.buyPrice.toFixed(2)}</td>
-            <td>${coin.amount}</td>
-            <td>$${invested.toFixed(2)}</td>
-            <td>$${currentPrice.toFixed(2)}</td>
-            <td>$${currentWorth.toFixed(2)}</td>
-            <td class="${diffClass}">${diffSign}$${difference.toFixed(2)}</td>
-          </tr>
-        `;
-        tbody.insertAdjacentHTML("beforeend", row);
-      });
-
-      const totalProfit = totalCurrent - totalInvested;
-      const profitClass = totalProfit >= 0 ? "profit" : "loss";
-      const profitSign = totalProfit >= 0 ? "+" : "";
-      document.getElementById("total-profit").textContent = `${profitSign}$${totalProfit.toFixed(2)}`;
-      document.getElementById("total-profit").className = profitClass;
-
-      document.getElementById("loader").style.display = "none";
-
-    } catch (err) {
-      console.error("Ошибка загрузки цен:", err);
-      document.getElementById("loader").textContent = "Не удалось загрузить цены.";
-    }
-  }
-
-  // Обновляем при загрузке
-  updatePrices();
-
-  // Обновлять каждые 5 минут
-  setInterval(updatePrices, 5 * 60 * 1000);
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
