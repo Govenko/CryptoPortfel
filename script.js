@@ -139,10 +139,7 @@ async function updatePortfolio() {
 
 // Форматирование чисел
 function formatNumber(num) {
-  if (Math.abs(num) < 0.01 && num !== 0) {
-    return num.toExponential(4);
-  }
-  return num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+  return Math.round(num).toLocaleString();
 }
 
 // Обновляем каждые 60 сек
