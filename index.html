@@ -4,22 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мой криптопортфель</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="assets/icon-192.png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <div class="container">
     <h1>Мой криптопортфель</h1>
-    <button id="refresh">🔄 Обновить цены</button>
-    <p><small>Данные обновлены: <span id="last-update">никогда</span></small></p>
+    <p><small>Обновлено: <span id="last-updated">—</span></small></p>
 
     <table id="portfolio-table">
       <thead>
         <tr>
           <th>Монета</th>
+          <th>Кол-во</th>
           <th>Цена покупки ($)</th>
-          <th>Количество</th>
           <th>Вложено ($)</th>
           <th>Текущая цена ($)</th>
           <th>Сейчас стоит ($)</th>
@@ -27,16 +26,18 @@
           <th>%</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Данные будут загружены из script.js -->
-      </tbody>
+      <tbody id="portfolio-body"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="7"><strong>Общая прибыль:</strong></td>
+          <td id="total-profit">...</td>
+        </tr>
+      </tfoot>
     </table>
 
-    <div class="total">
-      <strong>Общая прибыль: <span id="total-profit">$0.00</span></strong>
-    </div>
+    <button onclick="refreshPrices()">Обновить цены</button>
   </div>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
