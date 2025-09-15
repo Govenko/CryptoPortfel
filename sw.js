@@ -1,16 +1,12 @@
-const CACHE_NAME = "crypto-portfolio-v1";
-const urlsToCache = ["./", "./index.html", "./style.css", "./script.js"];
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
-  );
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
 });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener('activate', (event) => {
+  return self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+  // Можно кэшировать, но пока просто пропускаем
+  event.respondWith(fetch(event.request));
 });
