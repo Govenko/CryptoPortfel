@@ -1,7 +1,7 @@
 // === Конфигурация портфеля ===
 // Здесь ты вручную указываешь свои монеты
 const portfolio = [
-  { symbol: "Chia", amount: 33.87, buyPrice: 9.7327 },
+  { symbol: "Chia", amount: 33.87, buyPrice: 19.28 },
   { symbol: "Arbitrum", amount: 338.15, buyPrice: 0.4873 },
   { symbol: "Optimism", amount: 198.52, buyPrice: 0.7349 },
   { symbol: "Polkadot", amount: 28.74, buyPrice: 4.1215 },
