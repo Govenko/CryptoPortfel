@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мой криптопортфель</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <div class="container">
     <h1>Мой криптопортфель</h1>
-    <p><small>Обновлено: <span id="last-updated">—</span></small></p>
+    <p><small>Данные обновляются каждые 60 секунд</small></p>
 
     <table id="portfolio-table">
       <thead>
@@ -26,18 +26,20 @@
           <th>%</th>
         </tr>
       </thead>
-      <tbody id="portfolio-body"></tbody>
+      <tbody id="portfolio-body">
+        <!-- Данные будут добавлены JS -->
+      </tbody>
       <tfoot>
         <tr>
-          <td colspan="7"><strong>Общая прибыль:</strong></td>
+          <td colspan="7">Общая прибыль:</td>
           <td id="total-profit">...</td>
         </tr>
       </tfoot>
     </table>
 
-    <button onclick="refreshPrices()">Обновить цены</button>
+    <div class="loader" id="loader">Загрузка данных...</div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
