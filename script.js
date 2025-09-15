@@ -2,16 +2,14 @@
 const portfolio = [
   { symbol: "XCH", name: "Chia", amount: 33.87, buyPrice: 19.28 },
   { symbol: "ARB", name: "Arbitrum", amount: 338.15, buyPrice: 0.8941 },
-  { symbol: "OP", name: "Optimism", amount: 198.52, buyPrice: 1.8105 },
+  { symbol: "OP", name: "Optimism", amount: 198.52, buyPrice: 1.8105 },  
   { symbol: "DOT", name: "Polkadot", amount: 28.74, buyPrice: 5.6279 },
   { symbol: "NOT", name: "Notcoin", amount: 40031.00, buyPrice: 0.007664 },
-  { symbol: "DOGS", name: "DOGS", amount: 498018.00, buyPrice: 0.001001 },
   { symbol: "FIL", name: "Filecoin", amount: 22.71, buyPrice: 3.2311 },
   { symbol: "MANA", name: "Decentraland", amount: 135.43, buyPrice: 0.3317 },
   { symbol: "BAT", name: "Basic Attention Token", amount: 236.00, buyPrice: 0.1857 },
   { symbol: "ATOM", name: "Cosmos", amount: 7.0000, buyPrice: 4.0000 },
   { symbol: "XRP", name: "XRP", amount: 10.00, buyPrice: 2.0934 },
-  { symbol: "HMSTR", name: "Hamster Kombat", amount: 32995.00, buyPrice: 0.006119 },
   { symbol: "DYDX", name: "dYdX", amount: 34.93, buyPrice: 1.2125 },
   { symbol: "PYTH", name: "Pyth Network", amount: 114.81, buyPrice: 0.2030 },
   { symbol: "WLD", name: "Worldcoin", amount: 9.9000, buyPrice: 2.3000 },
@@ -33,6 +31,8 @@ const portfolio = [
   { symbol: "VELO", name: "Velo", amount: 100.00, buyPrice: 0.025 },
   { symbol: "GMX", name: "GMX", amount: 0.09, buyPrice: 17.53 },
   { symbol: "LINEA", name: "Linea", amount: 41.00, buyPrice: 0.02526 },
+  { symbol: "DOGS", name: "DOGS", amount: 498018, buyPrice: 0.001001 },
+  { symbol: "HMSTR", name: "Hamster Kombat", amount: 32995.00, buyPrice: 0.006119 },
   { symbol: "CATS", name: "CATS", amount: 500000.00, buyPrice: 0.0000587 }
 ];
 
