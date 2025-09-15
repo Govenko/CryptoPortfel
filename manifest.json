@@ -2,7 +2,7 @@
   "name": "Мой криптопортфель",
   "short_name": "CryptoPortfel",
   "description": "Мой криптопортфель с живыми ценами",
-  "start_url": "/CryptoPortfel/",
+  "start_url": "https://govenko.github.io/CryptoPortfel/",
   "display": "standalone",
   "background_color": "#3498db",
   "theme_color": "#3498db",
@@ -18,5 +18,7 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "id": "1",
+  "lang": "ru"
 }
