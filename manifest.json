@@ -1,12 +1,54 @@
 {
+  "id": "/CryptoPortfel/",
   "name": "Мой криптопортфель",
   "short_name": "CryptoPortfel",
   "description": "Мой криптопортфель с живыми ценами",
-  "start_url": "https://govenko.github.io/CryptoPortfel/",
+  "start_url": "/CryptoPortfel/",
+  "scope": "/CryptoPortfel/",
   "display": "standalone",
+  "display_override": ["standalone", "window-control-overlay"],
   "background_color": "#3498db",
   "theme_color": "#3498db",
   "orientation": "portrait-primary",
+  "lang": "ru",
+  "dir": "ltr",
+  "categories": ["finance", "utilities"],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "screenshots": [
+    {
+      "src": "images/screenshots/screenshot-1.png",
+      "type": "image/png",
+      "sizes": "1080x1920",
+      "description": "Мой криптопортфель на главном экране"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Обновить портфель",
+      "short_name": "Обновить",
+      "description": "Обновить текущие цены",
+      "url": "/CryptoPortfel/",
+      "icons": [
+        {
+          "src": "images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "widgets": [
+    {
+      "name": "Мой портфель",
+      "description": "Отображает текущую прибыль по криптовалютам",
+      "content": "<div>Загружается...</div>",
+      "type": "medium",
+      "data": {}
+    }
+  ],
   "icons": [
     {
       "src": "images/icon-192.png",
@@ -18,7 +60,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "id": "1",
-  "lang": "ru"
+  ]
 }
