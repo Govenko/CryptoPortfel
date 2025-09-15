@@ -1,167 +1,150 @@
-// === Конфигурация портфеля ===
-// Здесь ты вручную указываешь свои монеты
+// === Настройки портфеля (вручную) ===
 const portfolio = [
-  { symbol: "Chia", amount: 33.87, buyPrice: 19.28 },
-  { symbol: "Arbitrum", amount: 338.15, buyPrice: 0.4873 },
-  { symbol: "Optimism", amount: 198.52, buyPrice: 0.7349 },
-  { symbol: "Polkadot", amount: 28.74, buyPrice: 4.1215 },
-  { symbol: "Notcoin", amount: 40031.00, buyPrice: 0.001842 },
-  { symbol: "DOGS", amount: 498018.00, buyPrice: 0.0001329 },
-  { symbol: "Filecoin", amount: 22.71, buyPrice: 2.3866 },
-  { symbol: "Decentraland", amount: 135.43, buyPrice: 0.3300 },
-  { symbol: "Basic Attention Token", amount: 236.00, buyPrice: 0.1520 },
-  { symbol: "Cosmos", amount: 7.0000, buyPrice: 4.4741 },
-  { symbol: "XRP", amount: 10.00, buyPrice: 3.0102 },
-  { symbol: "Hamster Kombat", amount: 32995.00, buyPrice: 0.0006854 },
-  { symbol: "dYdX", amount: 34.93, buyPrice: 0.6001 },
-  { symbol: "Pyth Network", amount: 114.81, buyPrice: 0.1570 },
-  { symbol: "Worldcoin", amount: 9.9000, buyPrice: 1.4803 },
-  { symbol: "Compound", amount: 0.32, buyPrice: 43.36 },
-  { symbol: "Starknet", amount: 77.15, buyPrice: 0.1298 },
-  { symbol: "ORDI", amount: 0.99, buyPrice: 9.3007 },
-  { symbol: "Solana", amount: 0.03, buyPrice: 232.02 },
-  { symbol: "Internet Computer", amount: 1.4900, buyPrice: 4.6435 },
-  { symbol: "Cyber", amount: 4.0100, buyPrice: 1.7137 },
-  { symbol: "Horizen", amount: 0.95, buyPrice: 7.1736 },
-  { symbol: "Celestia", amount: 3.6000, buyPrice: 1.6654 },
-  { symbol: "ZKsync", amount: 99.00, buyPrice: 0.05696 },
-  { symbol: "NEAR Protocol", amount: 1.9900, buyPrice: 2.5889 },
-  { symbol: "ZetaChain", amount: 25.89, buyPrice: 0.1834 },
-  { symbol: "Sui", amount: 1.0000, buyPrice: 3.4806 },
-  { symbol: "Flow", amount: 7.0000, buyPrice: 0.3942 },
-  { symbol: "Major", amount: 15.00, buyPrice: 0.1582 },
-  { symbol: "DappRadar", amount: 1000.00, buyPrice: 0.001748 },
-  { symbol: "Velo", amount: 100.00, buyPrice: 0.01518 },
-  { symbol: "GMX", amount: 0.09, buyPrice: 14.79 },
-  { symbol: "Linea", amount: 41.00, buyPrice: 0.02639 },
-  { symbol: "CATS", amount: 500000.00, buyPrice: 0.000001928 },
+  { symbol: "XCH", name: "Chia", amount: 33.87, buyPrice: 19.28 },
+  { symbol: "ARB", name: "Arbitrum", amount: 338.15, buyPrice: 0.8941 },
+  { symbol: "OP", name: "Optimism", amount: 198.52, buyPrice: 1.8105 },
+  { symbol: "DOT", name: "Polkadot", amount: 28.74, buyPrice: 5.6279 },
+  { symbol: "NOT", name: "Notcoin", amount: 40031.00, buyPrice: 0.007664 },
+  { symbol: "DOGS", name: "DOGS", amount: 498018.00, buyPrice: 0.001001 },
+  { symbol: "FIL", name: "Filecoin", amount: 22.71, buyPrice: 3.2311 },
+  { symbol: "MANA", name: "Decentraland", amount: 135.43, buyPrice: 0.3317 },
+  { symbol: "BAT", name: "Basic Attention Token", amount: 236.00, buyPrice: 0.1857 },
+  { symbol: "ATOM", name: "Cosmos", amount: 7.0000, buyPrice: 4.0000 },
+  { symbol: "XRP", name: "XRP", amount: 10.00, buyPrice: 2.0934 },
+  { symbol: "HMSTR", name: "Hamster Kombat", amount: 32995.00, buyPrice: 0.006119 },
+  { symbol: "DYDX", name: "dYdX", amount: 34.93, buyPrice: 1.2125 },
+  { symbol: "PYTH", name: "Pyth Network", amount: 114.81, buyPrice: 0.2030 },
+  { symbol: "WLD", name: "Worldcoin", amount: 9.9000, buyPrice: 2.3000 },
+  { symbol: "COMP", name: "Compound", amount: 0.32, buyPrice: 46.34 },
+  { symbol: "STRK", name: "Starknet", amount: 77.15, buyPrice: 1.0346 },
+  { symbol: "ORDI", name: "ORDI", amount: 0.99, buyPrice: 28.76 },
+  { symbol: "SOL", name: "Solana", amount: 0.03, buyPrice: 155.00 },
+  { symbol: "ICP", name: "Internet Computer", amount: 1.4900, buyPrice: 9.5760 },
+  { symbol: "CYBER", name: "Cyber", amount: 4.0100, buyPrice: 7.7300 },
+  { symbol: "ZEN", name: "Horizen", amount: 0.95, buyPrice: 15.66 },
+  { symbol: "TIA", name: "Celestia", amount: 3.6000, buyPrice: 9.0000 },
+  { symbol: "ZK", name: "ZKsync", amount: 99.00, buyPrice: 0.1765 },
+  { symbol: "NEAR", name: "NEAR Protocol", amount: 1.9900, buyPrice: 5.5800 },
+  { symbol: "ZETA", name: "ZetaChain", amount: 25.89, buyPrice: 1.5500 },
+  { symbol: "SUI", name: "Sui", amount: 1.0000, buyPrice: 4.4400 },
+  { symbol: "FLOW", name: "Flow", amount: 7.0000, buyPrice: 0.5 },
+  { symbol: "MAJOR", name: "Major", amount: 15.00, buyPrice: 0.769 },
+  { symbol: "RADAR", name: "DappRadar", amount: 1000.00, buyPrice: 0.005919 },
+  { symbol: "VELO", name: "Velo", amount: 100.00, buyPrice: 0.025 },
+  { symbol: "GMX", name: "GMX", amount: 0.09, buyPrice: 17.53 },
+  { symbol: "LINEA", name: "Linea", amount: 41.00, buyPrice: 0.02526 },
+  { symbol: "CATS", name: "CATS", amount: 500000.00, buyPrice: 0.0000587 }
 ];
 
-// === Маппинг названий монет к ID CoinGecko ===
-// Важно: нужно знать ID каждой монеты в CoinGecko API
+// === Маппинг символа → ID CoinGecko ===
 const coinGeckoIds = {
-  "Chia": "XCH",
-  "Arbitrum": "arbitrum",
-  "Optimism": "optimism",
-  "Polkadot": "polkadot",
-  "Notcoin": "notcoin",
-  "DOGS": "dogs",
-  "Filecoin": "filecoin",
-  "Decentraland": "decentraland",
-  "Basic Attention Token": "basic-attention-token",
-  "Cosmos": "cosmos",
-  "XRP": "ripple",
-  "Hamster Kombat": "hamster-kombat",
-  "dYdX": "dydx",
-  "Pyth Network": "pyth-network",
-  "Worldcoin": "worldcoin",
-  "Compound": "compound-governance-token",
-  "Starknet": "starknet",
-  "ORDI": "ordinals",
-  "Solana": "solana",
-  "Internet Computer": "internet-computer",
-  "Cyber": "cyberconnect",
-  "Horizen": "horizen",
-  "Celestia": "celestia",
-  "ZKsync": "zksync",
-  "NEAR Protocol": "near",
-  "ZetaChain": "zetachain",
-  "Sui": "sui",
-  "Flow": "flow",
-  "Major": "major",
-  "DappRadar": "dappradar",
-  "Velo": "velo",
-  "GMX": "gmx",
-  "Linea": "linea",
-  "CATS": "cats",
+  XCH: "chia",
+  ARB: "arbitrum",
+  OP: "optimism",
+  DOT: "polkadot",
+  NOT: "notcoin",
+  DOGS: "dogs",
+  FIL: "filecoin",
+  MANA: "decentraland",
+  BAT: "basic-attention-token",
+  ATOM: "cosmos",
+  XRP: "ripple",
+  HMSTR: "hamster-kombat",
+  DYDX: "dydx",
+  PYTH: "pyth-network",
+  WLD: "worldcoin",
+  COMP: "compound-governance-token",
+  STRK: "starknet",
+  ORDI: "ordinals",
+  SOL: "solana",
+  ICP: "internet-computer",
+  CYBER: "cyberconnect",
+  ZEN: "horizen",
+  TIA: "celestia",
+  ZK: "zksync",
+  NEAR: "near",
+  ZETA: "zetachain",
+  SUI: "sui",
+  FLOW: "flow",
+  MAJOR: "major",
+  RADAR: "dappradar",
+  VELO: "velo",
+  GMX: "gmx",
+  LINEA: "linea",
+  CATS: "cats"
 };
 
-// === Основная функция ===
-let pricesCache = {};
-let lastUpdate = null;
+// === Обновление таблицы ===
+async function updatePortfolio() {
+  const tbody = document.getElementById("portfolio-body");
+  const totalProfitEl = document.getElementById("total-profit");
+  const loader = document.getElementById("loader");
 
-async function updatePrices() {
-  const ids = Object.values(coinGeckoIds).join(",");
-  try {
-    const response = await fetch(
-      `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`
-    );
-    const data = await response.json();
-
-    // Кэшируем цены
-    for (const [name, id] of Object.entries(coinGeckoIds)) {
-      if (data[id]?.usd) {
-        pricesCache[name] = data[id].usd;
-      }
-    }
-
-    lastUpdate = new Date().toLocaleString("ru-RU");
-    document.getElementById("last-update").textContent = lastUpdate;
-    renderTable();
-  } catch (err) {
-    console.error("Ошибка получения цен:", err);
-    alert("Не удалось получить цены. Проверь подключение.");
-  }
-}
-
-function renderTable() {
-  const tbody = document.querySelector("#portfolio-table tbody");
+  loader.style.display = "block";
   tbody.innerHTML = "";
 
   let totalInvested = 0;
   let totalCurrent = 0;
 
-  portfolio.forEach((coin) => {
-    const currentPrice = pricesCache[coin.symbol] || 0;
-    const invested = coin.amount * coin.buyPrice;
-    const currentWorth = coin.amount * currentPrice;
-    const diff = currentWorth - invested;
-    const percent = invested > 0 ? (diff / invested) * 100 : 0;
+  // Собираем ID для массового запроса
+  const ids = portfolio.map(p => coinGeckoIds[p.symbol]).join(",");
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`;
 
-    totalInvested += invested;
-    totalCurrent += currentWorth;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
 
-    const row = document.createElement("tr");
+    portfolio.forEach(coin => {
+      const id = coinGeckoIds[coin.symbol];
+      const currentPrice = data[id]?.usd || 0;
 
-    row.innerHTML = `
-      <td data-label="Монета">${coin.symbol}</td>
-      <td data-label="Цена покупки">${coin.buyPrice.toFixed(6)}</td>
-      <td data-label="Количество">${coin.amount.toLocaleString('ru-RU', { maximumFractionDigits: 6 })}</td>
-      <td data-label="Вложено">${invested.toFixed(2)}</td>
-      <td data-label="Текущая цена">${currentPrice > 0 ? currentPrice.toFixed(6) : '---'}</td>
-      <td data-label="Сейчас стоит">${currentWorth.toFixed(2)}</td>
-      <td data-label="Разница" class="${diff >= 0 ? 'positive' : 'negative'}">${diff.toFixed(2)}</td>
-      <td data-label="% прибыли" class="${percent >= 0 ? 'positive' : 'negative'}">${percent.toFixed(2)}%</td>
-    `;
+      const invested = coin.amount * coin.buyPrice;
+      const current = coin.amount * currentPrice;
+      const diff = current - invested;
+      const percent = invested > 0 ? (diff / invested) * 100 : 0;
 
-    tbody.appendChild(row);
-  });
+      totalInvested += invested;
+      totalCurrent += current;
 
-  const totalProfit = totalCurrent - totalInvested;
-  document.getElementById("total-profit").textContent =
-    `${totalProfit > 0 ? '+' : ''}${totalProfit.toFixed(2)}$`;
+      const row = document.createElement("tr");
 
-  // Сохраняем общую прибыль в localStorage для возможного виджета
-  localStorage.setItem("cryptoPortfolioTotal", JSON.stringify({
-    profit: totalProfit,
-    timestamp: lastUpdate
-  }));
+      row.innerHTML = `
+        <td>${coin.name} (${coin.symbol})</td>
+        <td>${formatNumber(coin.amount)}</td>
+        <td>$${formatNumber(coin.buyPrice)}</td>
+        <td>$${formatNumber(invested)}</td>
+        <td>$${formatNumber(currentPrice)}</td>
+        <td>$${formatNumber(current)}</td>
+        <td class="${diff >= 0 ? 'positive' : 'negative'}">$${formatNumber(diff)}</td>
+        <td class="${diff >= 0 ? 'positive' : 'negative'}">${formatNumber(percent)}%</td>
+      `;
+
+      tbody.appendChild(row);
+    });
+
+    const totalDiff = totalCurrent - totalInvested;
+    const totalPercent = totalInvested > 0 ? (totalDiff / totalInvested) * 100 : 0;
+    totalProfitEl.textContent = `${formatNumber(totalDiff)} (${
+      totalDiff >= 0 ? '+' : ''
+    }${formatNumber(totalPercent)}%)`;
+    totalProfitEl.className = totalDiff >= 0 ? 'positive' : 'negative';
+
+  } catch (error) {
+    console.error("Ошибка загрузки цен:", error);
+    totalProfitEl.textContent = "Ошибка";
+  } finally {
+    loader.style.display = "none";
+  }
 }
 
-// === Загрузка при старте ===
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("refresh").addEventListener("click", updatePrices);
-
-  // Попробовать загрузить кэш
-  if (localStorage.getItem("pricesCache")) {
-    pricesCache = JSON.parse(localStorage.getItem("pricesCache"));
-    lastUpdate = localStorage.getItem("lastUpdate");
-    document.getElementById("last-update").textContent = lastUpdate || "неизвестно";
+// Форматирование чисел
+function formatNumber(num) {
+  if (Math.abs(num) < 0.01 && num !== 0) {
+    return num.toExponential(4);
   }
+  return num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+}
 
-  // Всё равно обновляем онлайн
-  updatePrices();
-
-  // Автообновление каждые 10 минут
-  setInterval(updatePrices, 10 * 60 * 1000);
-});
+// Обновляем каждые 60 сек
+updatePortfolio();
+setInterval(updatePortfolio, 60000);
