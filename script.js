@@ -45,7 +45,7 @@ const portfolio = [
 { symbol: "MAJOR", name: "Major", amount: 15.00, buyPrice: 0.769 },
 { symbol: "VRTS", name: "Vertus", amount: 1797.00, buyPrice: 0.0001 },
 { symbol: "CATS", name: "CATS", amount: 500000.00, buyPrice: 0.0000587 },
-{ symbol: "DOGS", name: "DOGS", amount: 466053.00, buyPrice: 0.001001 }
+{ symbol: "DOGS", name: "DOGS", amount: 46605.00, buyPrice: 0.01001 }
 ];
 
 // === Маппинг символа → ID CoinGecko ===
