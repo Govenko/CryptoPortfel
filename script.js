@@ -44,8 +44,7 @@ const portfolio = [
 { symbol: "HMSTR", name: "Hamster Kombat", amount: 48300.00, buyPrice: 0.006119 },
 { symbol: "MAJOR", name: "Major", amount: 15.00, buyPrice: 0.769 },
 { symbol: "VRTS", name: "Vertus", amount: 1797.00, buyPrice: 0.0001 },
-{ symbol: "CATS", name: "CATS", amount: 500000.00, buyPrice: 0.0000587 },
-{ symbol: "DOGS", name: "DOGS", amount: 466053.00, buyPrice: 0.001002 }
+{ symbol: "CATS", name: "CATS", amount: 500000.00, buyPrice: 0.0000587 }
 ];
 
 // === Маппинг символа → ID CoinGecko ===
@@ -55,7 +54,6 @@ const coinGeckoIds = {
   OP: "optimism",
   DOT: "polkadot",
   NOT: "notcoin",
-  DOGS: "dogs",
   FIL: "filecoin",
   MANA: "decentraland",
   BAT: "basic-attention-token",
